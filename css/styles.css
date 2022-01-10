@@ -1,0 +1,187 @@
+/* Importing the font faces */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* systemwide variables  */
+:root {
+  --color-bg-accent: hsl(263, 55%, 52%);
+  --color-bg-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-bg-light-grayish-blue: hsl(210, 46%, 95%);
+  --color-bg-dark-grey: hsl(239, 29%, 14%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 81%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-light-grayish-blue);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 1110px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "one one three five"
+    "two four four five";
+  column-gap: 3rem;
+  row-gap: 2.2rem;
+}
+
+@media only screen and (max-width: 71.25em) {
+  main {
+    padding: 1.8rem;
+    column-gap: 2.2rem;
+    row-gap: 1.6rem;
+  }
+}
+
+.card {
+  padding: 2.4rem 3.2rem;
+  border-radius: 8px;
+  box-shadow: 4px 4px 20px rgba(117, 65, 200, 0.25);
+  position: relative;
+}
+
+/* Setting up the cards backgrounds and coloring of text*/
+.card.one {
+  background-color: var(--color-bg-accent);
+  grid-area: one;
+  color: var(--color-white);
+}
+
+.card.two {
+  background-color: var(--color-white);
+  grid-area: two;
+  color: var(---color-bg-dark-grayish-blue);
+}
+
+.card.three {
+  background-color: var(--color-bg-dark-grayish-blue);
+  grid-area: three;
+  color: var(--color-light-gray);
+}
+
+.card.four {
+  background-color: var(--color-bg-dark-grey);
+  grid-area: four;
+  color: var(--color-light-gray);
+}
+
+.card.five {
+  background-color: var(--color-white);
+  grid-area: five;
+  color: var(--color-bg-dark-grayish-blue);
+}
+
+/* Card Head section */
+.card .card__head {
+  margin-bottom: 1.6rem;
+  width: 19.2rem;
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar status";
+  column-gap: 1.2rem;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1;
+  grid-area: avatar;
+  border-radius: 50%;
+  border: 1px solid var(--color-bg-accent);
+}
+
+/* typography and layout of card elements */
+.card__name {
+  grid-area: name;
+
+  /* typography */
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
+.card__status {
+  grid-area: status;
+  opacity: 50%;
+
+  /* typography */
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+}
+
+.card__subtitle {
+  margin-bottom: 1.6rem;
+  position: relative;
+  z-index: 10;
+
+  /* typography */
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: auto;
+}
+
+.card__paragraph {
+  opacity: 75%;
+
+  /* typography */
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+/* adding quote image to the card */
+.card.quote::after {
+  content: "";
+  width: 10.4rem;
+  height: 10.2rem;
+  background-image: url("../images/bg-pattern-quotation.svg");
+  position: absolute;
+  top: 0;
+  right: 8.2rem;
+}
+
+/* Media queries for Mobile version Width: 374px */
+@media only screen and (max-width: 375px) {
+  body {
+    height: auto;
+  }
+
+  main {
+    margin: 7rem auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "three"
+      "two"
+      "four"
+      "five";
+    row-gap: 2.6rem;
+  }
+
+  .card.quote::after {
+    right: 2.4rem;
+  }
+}
