@@ -163,8 +163,8 @@ main {
   right: 8.2rem;
 }
 
-/* Media queries for Mobile version Width: 374px */
-@media only screen and (max-width: 375px) {
+/* Media queries for Mobile version Width: 600px */
+@media only screen and (max-width: 600px) {
   body {
     height: auto;
   }
