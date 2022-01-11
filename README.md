@@ -35,7 +35,7 @@ These are the veiws from my system
 ### Links
 
 - Solution URL: [My github](https://github.com/Yakub-Egamnazarov/frontendMentor-testimonials.git)
-- Live Site URL: [Live-version of the site](https://your-live-site-url.com)
+- Live Site URL: [Live-version of the site](https://fm-testimonials.netlify.app/)
 
 ## My process
 
